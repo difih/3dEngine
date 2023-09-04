@@ -1,0 +1,34 @@
+s = 200;
+s1 = 20;
+
+y = 200;
+y1 = 300;
+
+z = 390;
+z1 = 20;
+
+cam = 20;
+cam1 = 20;
+
+p = pz,py
+
+function setup(){
+    createCanvas(400,400);
+}
+function draw(){
+    background(200);
+    
+    point(s,s1);
+    point(cam,cam1);
+    point(y,y1);
+    point(z,z1);
+
+    line(s,s1,y,y1);
+    line(cam,cam1,z,z1);
+
+
+
+}
+
+
+// py/sy = pz/sz
