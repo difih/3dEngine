@@ -71,66 +71,43 @@ let ys8 = 0;
 let xs8 = 0;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(540, 600);
 
-  // sliderX = createSlider(0, height/2,width/2);
-  // sliderX.position(420, 10);
+  sliderX = createSlider(0, width,width/2);
+  sliderX.position(420, 10);
 
-  // sliderY = createSlider(-50, 0, -500);
-  // sliderY.position(420, 40);
+  sliderY = createSlider(0,height,height/2);
+  sliderY.position(420, 40);
 
-  // sliderZ = createSlider(-50, 0, -500);
-  // sliderZ.position(420, 70);
+  sliderZ = createSlider(-120,0,-50);
+  sliderZ.position(420, 70);
 
 }
 
 function draw() {
   background(220);
 
-  // let px1 = sliderX.value();
-  // let px2 = sliderX.value();
-  // let px3 = sliderX.value();
-  // let px4 = sliderX.value();
-  // let px5 = sliderX.value();
-  // let px6 = sliderX.value();
-  // let px7 = sliderX.value();
-  // let px8 = sliderX.value();
-
-  // let py1 = sliderY.value();
-  // let py2 = sliderY.value();
-  // let py3 = sliderY.value();
-  // let py4 = sliderY.value();
-  // let py5 = sliderY.value();
-  // let py6 = sliderY.value();
-  // let py7 = sliderY.value();
-  // let py8 = sliderY.value();
-
-  // let pz1 = sliderZ.value();
-  // let pz2 = sliderZ.value();
-  // let pz3 = sliderZ.value();
-  // let pz4 = sliderZ.value();
-  // let pz5 = sliderZ.value();
-  // let pz6 = sliderZ.value();
-  // let pz7 = sliderZ.value();
-  // let pz8 = sliderZ.value();
+  skalarX=sliderX.value();
+  skalarY=sliderY.value();
 
   //Beregner punkter
-  ys1 = (py1 * cs) / pz1 + vektorY; //Punkt 1
-  xs1 = (px1 * cs) / pz1 + vektorX;
-  ys2 = (py2 * cs) / pz2 + vektorY; //Punkt 2
-  xs2 = (px2 * cs) / pz2 + vektorX;
-  ys3 = (py3 * cs) / pz3 + vektorY; //Punkt 3
-  xs3 = (px3 * cs) / pz3 + vektorX;
-  ys4 = (py4 * cs) / pz4 + vektorY; //Punkt 4
-  xs4 = (px4 * cs) / pz4 + vektorX;
-  ys5 = (py5 * cs) / pz5 + vektorY; //Punkt 5
-  xs5 = (px5 * cs) / pz5 + vektorX;
-  ys6 = (py6 * cs) / pz6 + vektorY; //Punkt 6
-  xs6 = (px6 * cs) / pz6 + vektorX;
-  ys7 = (py7 * cs) / pz7 + vektorY; //Punkt 7
-  xs7 = (px7 * cs) / pz7 + vektorX;
-  ys8 = (py8 * cs) / pz8 + vektorY; //Punkt 8
-  xs8 = (px8 * cs) / pz8 + vektorX;
+  ys1 = (py1 * cs) / pz1 + vektorY * skalarY; //Punkt 1
+  xs1 = (px1 * cs) / pz1 + vektorX * skalarX;
+  ys2 = (py2 * cs) / pz2 + vektorY * skalarY; //Punkt 2
+  xs2 = (px2 * cs) / pz2 + vektorX * skalarX;
+  ys3 = (py3 * cs) / pz3 + vektorY * skalarY; //Punkt 3
+  xs3 = (px3 * cs) / pz3 + vektorX * skalarX;
+  ys4 = (py4 * cs) / pz4 + vektorY * skalarY; //Punkt 4
+  xs4 = (px4 * cs) / pz4 + vektorX * skalarX;
+  ys5 = (py5 * cs) / pz5 + vektorY * skalarY; //Punkt 5
+  xs5 = (px5 * cs) / pz5 + vektorX * skalarX;
+  ys6 = (py6 * cs) / pz6 + vektorY * skalarY; //Punkt 6
+  xs6 = (px6 * cs) / pz6 + vektorX * skalarX;
+  ys7 = (py7 * cs) / pz7 + vektorY * skalarY; //Punkt 7
+  xs7 = (px7 * cs) / pz7 + vektorX * skalarX;
+  ys8 = (py8 * cs) / pz8 + vektorY * skalarY; //Punkt 8
+  xs8 = (px8 * cs) / pz8 + vektorX * skalarX;
+
 
   //tegn punkter
   point(xs1,ys1); //punkt 1
@@ -155,13 +132,4 @@ function draw() {
   line(xs7,ys7,xs8,ys8); //punkt 7 (højre, øverst bagerst) - 8 (højre, nederst bagerst)
   line(xs4,ys4,xs8,ys8); //punkt 4 (venstre øverst forrest) - 8 (højre, nederst bagerst)
   line(xs6,ys6,xs8,ys8); //punkt 6 (venstre,nederst, bagerst) - 8 (højre, nederst bagerst)
-
-  pz1 = pz1 + 1;
-  pz2 = pz2 + 1;
-  pz3 = pz3 + 1;
-  pz4 = pz4 + 1;
-  pz5 = pz5 + 1;
-  pz6 = pz6 + 1;
-  pz7 = pz7 + 1;
-  pz8 = pz8 + 1;
 }
